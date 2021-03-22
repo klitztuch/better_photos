@@ -1,0 +1,4 @@
+enum PageIndex {
+  GalleryPage,
+  SettingsPage
+}
