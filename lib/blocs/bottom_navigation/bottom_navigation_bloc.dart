@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:better_photos/blocs/gallery/gallery_bloc.dart';
 import 'package:better_photos/repositories/models/page.dart';
 import 'package:better_photos/repositories/repositories.dart';
 import 'package:bloc/bloc.dart';
@@ -35,7 +36,7 @@ class BottomNavigationBloc
         case PageIndex.GalleryPage:
           {
             String data = await _getGalleryPageData();
-            yield GalleryPageLoaded(text: data);
+            yield GalleryState(text: data);
           }
           break;
 

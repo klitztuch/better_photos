@@ -21,14 +21,14 @@ class PageLoading extends BottomNavigationState {
   String toString() => 'PageLoading';
 }
 
-class GalleryPageLoaded extends BottomNavigationState {
-  final String text;
-
-  GalleryPageLoaded({required this.text});
-
-  @override
-  String toString() => 'GalleryPageLoaded with text: $text';
-}
+// class GalleryPageLoaded extends BottomNavigationState {
+//   final String text;
+//
+//   GalleryPageLoaded({required this.text});
+//
+//   @override
+//   String toString() => 'GalleryPageLoaded with text: $text';
+// }
 
 class SettingsPageLoaded extends BottomNavigationState {
   final int number;

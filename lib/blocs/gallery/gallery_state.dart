@@ -1,9 +1,12 @@
 part of 'gallery_bloc.dart';
 
-class GalleryState extends Equatable {
-  const GalleryState();
+class GalleryState extends BottomNavigationState {
+  final String text;
+
+  GalleryState({required this.text});
 
   @override
-  List<Object> get props => [];
-
+  String toString() {
+    return 'GalleryState loaded with text: $text';
+  }
 }

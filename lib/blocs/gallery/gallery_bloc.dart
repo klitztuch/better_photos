@@ -1,3 +1,4 @@
+import 'package:better_photos/blocs/bottom_navigation/bottom_navigation_bloc.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 

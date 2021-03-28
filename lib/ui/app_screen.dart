@@ -1,4 +1,5 @@
 import 'package:better_photos/blocs/bottom_navigation/bottom_navigation_bloc.dart';
+import 'package:better_photos/blocs/gallery/gallery_bloc.dart';
 import 'package:better_photos/repositories/models/page.dart';
 import 'package:better_photos/ui/pages/gallery_page.dart';
 import 'package:better_photos/ui/pages/settings_page.dart';
@@ -21,8 +22,9 @@ class AppScreen extends StatelessWidget {
           if (state is PageLoading) {
             return Center(child: CircularProgressIndicator());
           }
-          if (state is GalleryPageLoaded) {
-            return GalleryPage(text: state.text);
+          if (state is GalleryState) {
+            return BlocProvider<GalleryBloc>(create: (context) => GalleryBloc(state), child: GalleryPage(text: state.text),);
+            // return GalleryPage(text: state.text);
           }
           if (state is SettingsPageLoaded) {
             return SettingsPage(number: state.number);

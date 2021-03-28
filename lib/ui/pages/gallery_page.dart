@@ -8,7 +8,8 @@ class GalleryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body:
+      Center(
         child: Text('My Text is $text.'),
       ),
     );
