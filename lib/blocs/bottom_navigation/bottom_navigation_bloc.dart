@@ -5,6 +5,7 @@ import 'package:better_photos/repositories/models/page.dart';
 import 'package:better_photos/repositories/repositories.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/cupertino.dart';
 
 part 'bottom_navigation_event.dart';
 
@@ -36,7 +37,8 @@ class BottomNavigationBloc
         case PageIndex.GalleryPage:
           {
             String data = await _getGalleryPageData();
-            yield GalleryState(text: data);
+            List<Image> image_data = await _getGalleryPageImages();
+            yield GalleryState(text: data, images: image_data);
           }
           break;
 
@@ -56,5 +58,9 @@ class BottomNavigationBloc
 
   Future<int> _getSettingsPageData() async {
     return await settingsRepository.fetchData();
+  }
+
+  Future<List<Image>> _getGalleryPageImages() async {
+    return await galleryRepository.fetchImages();
   }
 }

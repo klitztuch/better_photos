@@ -23,7 +23,7 @@ class AppScreen extends StatelessWidget {
             return Center(child: CircularProgressIndicator());
           }
           if (state is GalleryState) {
-            return BlocProvider<GalleryBloc>(create: (context) => GalleryBloc(state), child: GalleryPage(text: state.text),);
+            return BlocProvider<GalleryBloc>(create: (context) => GalleryBloc(state), child: GalleryPage(text: state.text, images: state.images,),);
             // return GalleryPage(text: state.text);
           }
           if (state is SettingsPageLoaded) {
