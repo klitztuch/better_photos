@@ -37,8 +37,8 @@ class BottomNavigationBloc
         case PageIndex.GalleryPage:
           {
             String data = await _getGalleryPageData();
-            List<Image> image_data = await _getGalleryPageImages();
-            yield GalleryState(text: data, images: image_data);
+            List<Image> imageData = await _getGalleryPageImages();
+            yield GalleryState(text: data, images: imageData);
           }
           break;
 
