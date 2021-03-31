@@ -15,7 +15,6 @@ class GalleryRepository {
 
   Future<List<Image>> fetchImages() async {
     final prefs = await SharedPreferences.getInstance();
-    
     var nextcloudHost = prefs.getString('nextcloud_host');
     var nextcloudAppPassword = prefs.getString('nextcloud_appPassword');
     _nextcloudService = NextcloudService(nextcloudHost!, nextcloudAppPassword!);
